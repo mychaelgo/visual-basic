@@ -1,0 +1,8 @@
+Komponen Yang Dibutugkan 
+---------------------------------------------
+ComponentOne VSFlexGrid 8.0 (light)
+ComponentOne VSFlexGrid 8.0 (OLEDB)
+Data Dynamics ActiveReport Vierwer 2.0
+Microsoft Common Dialog Control 6.0
+Microsoft Tabbed Dialog Control 6.0
+Microsoft Windows Common Controls 6.0

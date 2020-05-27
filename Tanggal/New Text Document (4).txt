@@ -1,0 +1,45 @@
+'Deskripsi: Mengkonversi nilai total detik ke dalam bentuk penulisan:
+'         : "sekian hari, sekian jam, sekian menit, dan sekian detik;
+'         : atau sering disingkat dengan: "n hari hh:mm:ss".
+'Pembuat  : Masino Sinaga (admin@masinosinaga.com)
+'Tanggal  : Senin, 6 Oktober 2008
+'Persiapan: 1. Buat satu project standard exe dengan satu form.
+'           2. Tambahkan satu commandbutton ke atas form.
+'           3. Copy-paste code berikut ini ke editor form.
+'-----------------------------------------------------
+
+'Setiap variabel yang digunakan harus dideklarasikan terlebih dulu
+Option Explicit
+
+Private Sub Command1_Click()
+  'Menghasilkan: 1 hari 01:01:01; artinya:
+  '90.061 detik itu sama artinya dengan 1 hari,
+  '1 jam, 1 menit, dan 1 detik.
+  MsgBox SecondsToDateTimeSerial(90061)
+End Sub
+
+Public Function SecondsToDateTimeSerial(ByVal Sec As Long) As String
+  Dim lngSecParam As Long
+  Dim lngSeconds As Long
+  Dim lngHours As Long
+  Dim lngMinutes As Long
+  
+  Dim tempSecParam As Long
+  
+  lngSecParam = Sec
+  lngSeconds = lngSecParam \ 86400
+  lngSecParam = lngSecParam - (lngSeconds * 86400)
+  
+  lngHours = lngSecParam \ 3600
+  lngSecParam = lngSecParam - (lngHours * 3600)
+  
+  lngMinutes = lngSecParam \ 60
+  lngSecParam = lngSecParam - (lngMinutes * 60)
+  
+  tempSecParam = lngSecParam
+  
+  SecondsToDateTimeSerial = _
+    IIf(Sec >= 86400, lngSeconds & " hari ", vbNullString) & _
+    IIf(Sec >= 0, Format(lngHours, "0#") & ":", vbNullString) & _
+    Format(lngMinutes, "0#") & ":" & Format(tempSecParam, "0#")
+End Function

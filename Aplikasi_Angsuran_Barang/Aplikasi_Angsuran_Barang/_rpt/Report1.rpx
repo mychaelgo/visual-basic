@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ActiveReportsLayout 
+	GUIDLIB="{FA14A48A-A959-472D-91EC-11677C103110}" GUIDREP="{A3B2E1BC-73B7-42F6-90C9-55AA98DE4629}" 
+	LICENSE="10000000"
+	PrintWidth="11205"
+	DocumentName="ActiveReports Document"
+	ScriptLang="VBScript"
+>
+<Watermark
+		>
+</Watermark>
+<PageSettings	LeftMargin="760"
+	RightMargin="760"
+	TopMargin="420"
+	BottomMargin="420"
+	PaperSize="256"
+	PaperHeight="3800"
+	Orientation="1"
+>
+</PageSettings>
+<StyleSheet>
+	<Style Name="Normal"
+	Value="font-family: &apos;Arial&apos;; font-style: normal; font-variant: inherit; font-weight: normal; font-size: 10pt; font-size-adjust: inherit; font-stretch: inherit; color: rgb(0,0,0); background-color: rgb(255,255,255); background-image: inherit; background-repeat: inherit; background-attachment: inherit; background-x-position: inherit; background-y-position: inherit; opacity: inherit; word-spacing: inherit; letter-spacing: inherit; text-decoration: none; vertical-align: inherit; text-transform: inherit; text-align: inherit; text-indent: inherit; unicode-bidi: inherit; line-height: inherit; white-space: inherit; ddo-can-grow: inherit; ddo-can-shrink: inherit; ddo-char-set: 0; "
+	/>
+	<Style Name="Heading1"
+	Value="font-family: &apos;inherit&apos;; font-style: inherit; font-variant: inherit; font-weight: bold; font-size: 16pt; font-size-adjust: inherit; font-stretch: inherit; "
+	/>
+	<Style Name="Heading2"
+	Value="font-family: &apos;Times New Roman&apos;; font-style: italic; font-variant: inherit; font-weight: bold; font-size: 14pt; font-size-adjust: inherit; font-stretch: inherit; "
+	/>
+	<Style Name="Heading3"
+	Value="font-family: &apos;inherit&apos;; font-style: inherit; font-variant: inherit; font-weight: bold; font-size: 13pt; font-size-adjust: inherit; font-stretch: inherit; "
+	/>
+	<Style Name="Heading4"
+	/>
+</StyleSheet>
+<Sections>
+	<Section Type="PageHeader" Name="PageHeader"
+		Height="360"
+	>
+		<Control 
+		Type="AR.Label"
+		Name="Label1"
+		Left="0"
+		Top="0"
+		Width="5610"
+		Height="330"
+		Caption="CV.NARDHIKA &amp; Co."
+		ClassName="Normal"
+		Style="font-family: &apos;Super Draft 20cpi&apos;; ddo-char-set: 1; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label2"
+		Left="0"
+		Top="165"
+		Width="8355"
+		Height="217"
+		Caption="Jln. Balonggede No.27 Telp. 022-4239396"
+		ClassName="Normal"
+		Style="font-family: &apos;Super Draft 20cpi&apos;; ddo-char-set: 1; font-size: 10pt; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label5"
+		Left="3030"
+		Top="0"
+		Width="2790"
+		Height="200"
+		Caption="No aaaaaaaaaaaaaaaaa"
+		ClassName="Normal"
+		Style="font-family: &apos;Super Draft 20cpi&apos;; ddo-char-set: 1; font-size: 10pt; "
+		>
+		</Control>
+	</Section>
+	<Section Type="Detail" Name="Detail"
+		Height="2730"
+	>
+		<Control 
+		Type="AR.Label"
+		Name="Label3"
+		Left="345"
+		Top="0"
+		Width="8010"
+		Height="285"
+		Caption="    KWITANSI/BUKTI PEMBAYARAN ANGSURAN YANG SAH"
+		ClassName="Normal"
+		Style="font-family: &apos;Draft 20cpi&apos;; ddo-char-set: 1; font-size: 10pt; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label6"
+		Left="0"
+		Top="315"
+		Width="8355"
+		Height="183"
+		Caption="Nilai       : bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+		ClassName="Normal"
+		Style="font-family: &apos;Draft 20cpi&apos;; ddo-char-set: 1; font-size: 10pt; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label7"
+		Left="0"
+		Top="480"
+		Width="8355"
+		Height="180"
+		Caption="Nama        : ccccccccccccccccccccccccccccccccccccc"
+		ClassName="Normal"
+		Style="font-family: &apos;Draft 20cpi&apos;; ddo-char-set: 1; font-size: 10pt; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label8"
+		Left="0"
+		Top="645"
+		Width="8355"
+		Height="180"
+		Caption="Alamat      : ddddddddddddddddddddddddddddddddddddd"
+		ClassName="Normal"
+		Style="font-family: &apos;Draft 20cpi&apos;; ddo-char-set: 1; font-size: 10pt; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label9"
+		Left="0"
+		Top="810"
+		Width="8355"
+		Height="180"
+		Caption="              eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+		ClassName="Normal"
+		Style="font-family: &apos;Draft 20cpi&apos;; ddo-char-set: 1; font-size: 10pt; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label10"
+		Left="0"
+		Top="975"
+		Width="8355"
+		Height="180"
+		Caption="Nama Barang : fffffffffffffffffffffffffffffffffffff"
+		ClassName="Normal"
+		Style="font-family: &apos;Draft 20cpi&apos;; ddo-char-set: 1; font-size: 10pt; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label11"
+		Left="0"
+		Top="1140"
+		Width="8355"
+		Height="180"
+		Caption="SPSB No/H   : ggggggggggggggggggggggggggggggggggggg"
+		ClassName="Normal"
+		Style="font-family: &apos;Draft 20cpi&apos;; ddo-char-set: 1; font-size: 10pt; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label12"
+		Left="0"
+		Top="1305"
+		Width="8355"
+		Height="180"
+		Caption="Sa/Insp     : hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh"
+		ClassName="Normal"
+		Style="font-family: &apos;Draft 20cpi&apos;; ddo-char-set: 1; font-size: 10pt; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Line"
+		Name="Line1"
+		X1="630"
+		Y1="225"
+		X2="3885"
+		Y2="225"
+		LineStyle="2"
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label13"
+		Left="0"
+		Top="1560"
+		Width="8355"
+		Height="180"
+		Caption="                                   Bandung, iiiiiiiiii                                       "
+		ClassName="Normal"
+		Style="font-family: &apos;Draft 20cpi&apos;; ddo-char-set: 1; font-size: 10pt; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label15"
+		Left="0"
+		Top="2055"
+		Width="8355"
+		Height="180"
+		Caption="PERHATIAN:"
+		ClassName="Normal"
+		Style="font-family: &apos;Draft 20cpi&apos;; ddo-char-set: 1; font-size: 10pt; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label16"
+		Left="0"
+		Top="2220"
+		Width="8355"
+		Height="180"
+		Caption="Pembayaran tanpa kwitansi dan cap perusahaan tidak sah."
+		ClassName="Normal"
+		Style="font-family: &apos;Draft 20cpi&apos;; ddo-char-set: 1; font-size: 10pt; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Label"
+		Name="Label17"
+		Left="0"
+		Top="2385"
+		Width="8355"
+		Height="180"
+		Caption="Bukti pembayaran angsuran berlaku untuk 1 kali angsuran."
+		ClassName="Normal"
+		Style="font-family: &apos;Draft 20cpi&apos;; ddo-char-set: 1; font-size: 10pt; "
+		>
+		</Control>
+		<Control 
+		Type="AR.Line"
+		Name="Line2"
+		X1="2520"
+		Y1="2145"
+		X2="3840"
+		Y2="2145"
+		LineStyle="2"
+		>
+		</Control>
+	</Section>
+	<Section Type="PageFooter" Name="PageFooter"
+		Height="0"
+	>
+	</Section>
+</Sections>
+</ActiveReportsLayout>

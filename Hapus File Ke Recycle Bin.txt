@@ -1,0 +1,48 @@
+'Deskripsi: Menghapus file ke recycle bin, dengan konfirmasi dari Windows.
+'Pembuat  : Masino Sinaga (admin@masinosinaga.com)
+'Persiapan: 1. Buat 1 Project baru dengan 1 Module, 1 Form, dan 1 Commandbutton
+'           2. Copy-kan coding berikut ke dalam Module dan Form yang bertalian.
+'------------------------------------------------------------------------------
+
+'Jika pilihan 'delete to recycle bin' Windows di-nonaktif-kan, 
+'file akan langsung dihapus secara permanen (?)... hati-hati!
+'--- Coding berikut di Module Anda...
+Public Type SHFILEOPSTRUCT
+hwnd As Long
+wFunc As Long
+pFrom As String
+pTo As String
+fFlags As Integer
+fAnyOperationsAborted As Boolean
+hNameMappings As Long
+lpszProgressTitle As String
+End Type
+Declare Function SHFileOperation Lib "shell32.dll" Alias "SHFileOperationA" _
+(lpFileOp As SHFILEOPSTRUCT) As Long
+Public Const F0_DELETE = &H3
+Public Const F0F_ALLOWUNDO = &H40
+Public Const F0F_CREATEPROGRESSDLG As Long = &H0
+'--- Batas akhir coding di Module...
+
+'--- Coding berikut di Form Anda...
+Private Sub Command1_Click()
+Dim MyBool As Boolean
+  'Ganti nama file di bawah dengan nama file yang ingin Anda hapus.
+  DelToRecycBin ("c:\My Documents\MyFile.Zip")
+End Sub
+
+Public Function DelToRecycBin(FileName As String)
+Dim FileOperation As SHFILEOPSTRUCT
+Dim lReturn As Long
+On Error GoTo DelToRecycBin_Err
+  With FileOperation
+     .wFunc = F0_DELETE
+     .pFrom = FileName
+     .fFlags = F0F_ALLOWUNDO + F0F_CREATEPROGRESSDLG
+  End With
+  lReturn = SHFileOperation(FileOperation)
+  Exit Function
+DelToRecycBin_Err:
+  MsgBox Err.Number & Err.Description
+End Function
+'--- Batas coding di form...

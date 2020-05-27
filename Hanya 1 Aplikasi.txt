@@ -1,0 +1,54 @@
+'Deskripsi: Hanya satu aplikasi yang sama yang boleh dijalankan/tampil 
+'           pada satu kesempatan. Jika sudah ada sebelumnya aplikasi 
+'           tersebut dijalankan, aktifkan kembali aplikasi tersebut.
+'Pembuat  : Masino Sinaga (admin@masinosinaga.com)
+'Diupload : Jumat, 10 Mei 2002.
+'Persiapan: 1. Buat 1 Project baru dengan 1 Form dan 1 Module.
+'           2. Copy-kan coding berikut ke dalam editor form & module ybt.       
+'           3. Kompile dan buat (Make) menjadi file EXE.
+'----------------------------------------------------------------------------
+
+'Jalankan atau double click file exe yang Anda buat ini, lalu minimize-kan.
+'Jalankan atau double click lagi file exe tadi... 
+'Karena aplikasi ini sudah dijalankan sebelumnya, maka aplikasi yang pertama
+'Anda jalankan tadi yang akan diaktifkan kembali...
+
+'Coding ini di Module Anda...
+Declare Function FindWindow Lib "user32" Alias "FindWindowA" _
+         (ByVal lpClassName As String, ByVal lpWindowName As String) As Long
+Declare Function GetWindow Lib "user32" (ByVal hwnd As Long, _
+         ByVal wCmd As Long) As Long
+Declare Function OpenIcon Lib "user32" (ByVal hwnd As Long) As Long
+Declare Function SetForegroundWindow Lib "user32" _
+         (ByVal hwnd As Long) As Long
+         
+Public Const GW_HWNDPREV = 3
+'--- Akhir coding di Module...
+
+'Coding ini di Form...
+Private Sub ShowPrevInstance()
+    Dim OldTitle As String
+    Dim ll_WindowHandle As Long
+    'Simpan judul ini ke dalam variabel OldTitle
+    OldTitle = App.Title
+    'Ganti judul aplikasinya...
+    App.Title = "abcde - Aplikasi ini akan ditutup!"
+    'Cari program sebelumnya. Jika Anda menggunakan VB 5.0,
+    'ganti "ThunderRT6Main" menjadi "ThunderRT5Main"
+    ll_WindowHandle = FindWindow("ThunderRT6Main", OldTitle)
+    'Jika tidak ada aplikasi sebelumnya dibuka, keluar
+    'langsung dari prosedur ini
+    If ll_WindowHandle = 0 Then Exit Sub
+    'Cari window yang kita butuhkan untuk dikembalikan
+    ll_WindowHandle = GetWindow(ll_WindowHandle, GW_HWNDPREV)
+    'Sekarang ganti window tersebut...
+    Call OpenIcon(ll_WindowHandle)
+    'Dan bawa sebagai latar depan (tampil di depan)
+    Call SetForegroundWindow(ll_WindowHandle)
+    End
+End Sub
+
+Private Sub Form_Load()
+    If App.PrevInstance Then ShowPrevInstance
+End Sub
+'--- Akhir coding di Form...

@@ -1,0 +1,8 @@
+bugs:
+
+----------------------------
+» 6 Juli 2006
+----------------------------
+- update table mst_Nomor
+  Kode No=007
+  Field: LastNo = 3

@@ -1,0 +1,29 @@
+'Deskripsi: Membuat direktori dengan bantuan Microsoft Scripting Runtime
+'           Anda dapat membuat sub direktori di dalam direktori yang
+'           baru saja Anda buat.
+'Pembuat  : Masino Sinaga (admin@masinosinaga.com)
+'Tanggal  : Rabu, 17 September 2008
+'Persiapan: 1. Buat satu project standard exe dengan satu Form.
+'           2. Tambahkan satu Commandbutton di atas form tadi.
+'           3. Tambahkan dari menu: Project -> References... :
+'               "Microsoft Scripting Runtime"
+'           4. Copy-kan code berikut ke editor form yang bertalian.
+'------------------------------------------------------------------------
+
+Private Sub MakeDir(strDir As String)
+  Dim fso As FileSystemObject
+  Set fso = CreateObject("Scripting.FileSystemObject")
+  If Not (fso.FolderExists(strDir)) Then
+    fso.CreateFolder (strDir)
+  End If
+End Sub
+
+'Klik tombol Command1 untuk membuat direktori 
+'C:\Dummy\NewDir. Perhatikan bahwa dalam hal ini
+'Anda harus membuat direktori utamanya dulu, lalu
+'buat lagi sub direktori-nya.
+Private Sub Command1_Click()
+  Call MakeDir("C:\Dummy") 'Buat direktori utama dulu
+  Call MakeDir("C:\Dummy\NewDir") 'Lalu buat sub direktorinya ;-)
+  MsgBox "Sukses buat direktori C:\Dummy\NewDir!", vbInformation
+End Sub

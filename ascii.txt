@@ -1,0 +1,19 @@
+'Deskripsi: Mengetahui kode ASCII tombol keyboard melalui penekanan
+'           tombol keyboard di sebuah form.
+'Pembuat  : Masino Sinaga (admin@masinosinaga.com)
+'Tanggal  : Senin, 13 Oktober 2008
+'Persiapan: 1. Buat satu project standard exe dengan satu form
+'           2. Copy-paste code berikut ke editor form yang bertalian
+'-------------------------------------------------------------------
+
+'Tekan tombol yang Anda kehendaki ketika Form1 sudah muncul
+'Amati kode ASCII-nya setelah Anda menekan tombol keyboard
+Private Sub Form_KeyDown(KeyCode As Integer, Shift As Integer)
+  MsgBox "Kode ASCII tombol yang baru Anda tekan = " & KeyCode
+End Sub
+
+'Jalankan program dengan menekan F5 dari IDE VB6
+Private Sub Form_Load()
+  'Nilai property KeyPreview form harus diset dulu ke True
+  Me.KeyPreview = True
+End Sub

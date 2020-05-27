@@ -1,0 +1,142 @@
+[Root]
+Most Recent Package=Standard Setup Package 1
+
+
+[Package|Standard Setup Package 1|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=E:\Download\VB\VB X TRPL Mychael\Pegawai\Package
+
+[Package|Standard Setup Package 1|Configure DAO ISAMs]
+Applicable=Yes
+Jet 2.x=No
+
+[Package|Standard Setup Package 1|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Standard Setup Package 1|Files Found]
+
+[Package|Standard Setup Package 1|Files Released]
+
+[Package|Standard Setup Package 1|Missing Dependency Information]
+C:\Program Files\Common Files\System\ado\msado20.tlb=
+C:\WINDOWS\system32\msstdfmt.dll=
+
+[Package|Standard Setup Package 1|Out-of-Date Dependency Information]
+
+[Package|Standard Setup Package 1|Files Added]
+
+[Package|Standard Setup Package 1|Files Removed]
+c:\windows\system32\vb5db.dll=
+c:\windows\system32\vbajet32.dll=
+c:\program files\common files\microsoft shared\dao\dao350.dll=
+c:\windows\system32\expsrv.dll=
+c:\program files\common files\system\ado\msado20.tlb=
+c:\windows\system32\msadodc.ocx=
+c:\windows\system32\msbind.dll=
+c:\windows\system32\msdatgrd.ocx=
+c:\windows\system32\msjet35.dll=
+c:\windows\system32\msjint35.dll=
+c:\windows\system32\msjter35.dll=
+c:\windows\system32\msrd2x35.dll=
+c:\windows\system32\msrepl35.dll=
+c:\windows\system32\msstdfmt.dll=
+c:\program files\microsoft visual studio\vb98\wizards\pdwizard\redist\msvcrt40.dll=
+c:\windows\system32\msvbvm60.dll=
+c:\windows\system32\oleaut32.dll=
+c:\windows\system32\olepro32.dll=
+c:\windows\system32\asycfilt.dll=
+c:\windows\system32\stdole2.tlb=
+c:\program files\microsoft visual studio\vb98\wizards\pdwizard\redist\comcat.dll=
+
+[Package|Standard Setup Package 1|Files In Project]
+E:\Download\VB\VB X TRPL Mychael\Pegawai\Aplikasi Pegawai.exe=Yes
+C:\WINDOWS\system32\msvbvm60.dll=No
+C:\WINDOWS\system32\oleaut32.dll=No
+C:\WINDOWS\system32\olepro32.dll=No
+C:\WINDOWS\system32\asycfilt.dll=No
+C:\WINDOWS\system32\stdole2.tlb=No
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=No
+C:\WINDOWS\system32\MSADODC.OCX=No
+C:\WINDOWS\system32\msstdfmt.dll=No
+C:\WINDOWS\system32\MSDATGRD.OCX=No
+C:\Program Files\Common Files\System\ado\msado20.tlb=No
+C:\WINDOWS\system32\MSBIND.DLL=No
+C:\Program Files\Common Files\Microsoft Shared\DAO\DAO350.DLL=No
+C:\WINDOWS\system32\MSJET35.DLL=No
+C:\WINDOWS\system32\MSJTER35.DLL=No
+C:\WINDOWS\system32\MSJINT35.DLL=No
+C:\WINDOWS\system32\vbajet32.dll=No
+C:\WINDOWS\system32\expsrv.dll=No
+C:\WINDOWS\system32\MSRD2X35.DLL=No
+C:\WINDOWS\system32\MSREPL35.DLL=No
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=No
+C:\WINDOWS\system32\VB5DB.DLL=No
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINDOWS\system32\VB6STKIT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+
+[Package|Standard Setup Package 1|Configure Registry Files]
+Applicable=No
+
+[Package|Standard Setup Package 1|Configure Remote Servers]
+Applicable=No
+
+[Package|Standard Setup Package 1|Install Locations]
+E:\Download\VB\VB X TRPL Mychael\Pegawai\Aplikasi Pegawai.exe=$(AppPath)
+C:\WINDOWS\system32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\oleaut32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\olepro32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\asycfilt.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\stdole2.tlb=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSADODC.OCX=$(WinSysPath)
+C:\WINDOWS\system32\msstdfmt.dll=$(WinSysPath)
+C:\WINDOWS\system32\MSDATGRD.OCX=$(WinSysPath)
+C:\Program Files\Common Files\System\ado\msado20.tlb=$(WinSysPath)
+C:\WINDOWS\system32\MSBIND.DLL=$(WinSysPath)
+C:\Program Files\Common Files\Microsoft Shared\DAO\DAO350.DLL=$(MSDAOPath)
+C:\WINDOWS\system32\MSJET35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSJTER35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSJINT35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\vbajet32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\expsrv.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSRD2X35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSREPL35.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\VB5DB.DLL=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+
+[Package|Standard Setup Package 1|Configure Shared Files]
+Applicable=Yes
+E:\Download\VB\VB X TRPL Mychael\Pegawai\Aplikasi Pegawai.exe=No
+
+[Package|Standard Setup Package 1|Distribution]
+Type=single
+Size=
+Title=Pegawai
+
+[Package|Standard Setup Package 1|Package]
+PackageFolder=E:\Download\VB\VB X TRPL Mychael\Pegawai\Package
+ProjectFolder=E:\Download\VB\VB X TRPL Mychael\Pegawai
+ServerSideCab=
+File1=E:\Download\VB\VB X TRPL Mychael\Pegawai\Package\setup.exe
+File2=E:\Download\VB\VB X TRPL Mychael\Pegawai\Package\Setup.Lst
+File3=E:\Download\VB\VB X TRPL Mychael\Pegawai\Package\Aplikasi Pegawai.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+[Package|Standard Setup Package 1|IconGroups]
+Group0=Pegawai
+PrivateGroup0=True
+Parent0=$(Programs)
+
+[Package|Standard Setup Package 1|Pegawai]
+Icon1="Aplikasi Pegawai.exe"
+Title1=Pegawai
+StartIn1=$(AppPath)
+Key1=Icon1

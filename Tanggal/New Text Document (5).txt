@@ -1,0 +1,58 @@
+'Deskripsi: Membuat sebuah perhitungan waktu yang akan menampilkan urutan:
+'           jam:menit:detik:sepersepuluhdetik. Waktu ini bisa direset, 
+'           dihentikan dan dilanjutkan kembali.
+'Pembuat  : Masino Sinaga (admin@masinosinaga.com)
+'Diupload : Jumat, 10 Mei 2002
+'Persiapan: 1. Buat 1 Project baru dengan 1 Form, 1 Timer, 1 Label, dan 
+'              2 Commandbutton.
+'           2. Set property Interval Timer menjadi 10.
+'           3. Set property Enabled Timer menjadi False.
+'           4. Copy-kan coding berikut ke dalam editor form & module ybt.
+'------------------------------------------------------------------------------
+
+'Tekan tombol pertama untuk memulai timer, dan tombol kedua untuk menghentikan
+'atau melanjutkannya kembali dari waktu yang dihentikan...
+
+Dim TotalTenthDetik, TotalDetik, TenthDetik, Detik, _
+Menit, Jam As Integer
+Dim Jam1 As String
+
+Private Sub Command1_Click()
+    'Inisialisasi total sepersepuluh detik
+    TotalTenthDetik = -1
+    'Aktifkan timer
+    Timer1.Enabled = True
+End Sub
+
+Private Sub Command2_Click()
+    'Memulai atau menghentikan timer kembali
+    Timer1.Enabled = Not Timer1.Enabled
+End Sub
+
+Private Sub Timer1_Timer()
+    'Tambah dengan satu untuk total sepersepuluh detik.
+    'Kita mengeset interval Timer menjadi 10, jadi
+    'setiap sepersepuluh detik prosedur ini akan dieksekusi
+    TotalTenthDetik = TotalTenthDetik + 1
+    'Jika TotalTenthSeconds = 10, set kembali menjadi 0.
+    TenthDetik = TotalTenthDetik Mod 10
+    '10 kali sepersepuluh detik sama dengan 1 detik.
+    'int - akan mengembalikan bilangan integer (bulat) dari pecahan
+    'Contoh: Int(0.9) = 0    '--> menghasilkan 0
+    TotalDetik = Int(TotalTenthDetik / 10)
+    'Jika variabel Seconds = 60, set kembali menjadi 0
+    Detik = TotalDetik Mod 60
+    If Len(Detik) = 1 Then
+       Detik = "0" & Detik    'Agar selalu dalam dua digit
+    End If
+    Menit = Int(TotalDetik / 60) Mod 60
+    If Len(Menit) = 1 Then
+       Menit = "0" & Menit    'Agar selalu dalam dua digit
+    End If
+    Jam = Int(TotalDetik / 3600)
+    If Jam < 9 Then
+       Jam1 = "0" & Jam       'Agar selalu dalam dua digit
+    End If
+    'Tampilkan hasilnya di Label1 (update terus Label1)
+    Label1 = Jam1 & ":" & Menit & ":" & Detik & ":" & TenthDetik & ""
+End Sub

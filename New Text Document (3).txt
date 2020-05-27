@@ -1,0 +1,25 @@
+me.combobox1.datasource = xSet.Tables(0)
+me.combobox1.DisplayMember = "namaField"
+
+  Dim daNamaJabatan As New OleDbDataAdapter("SELECT * from MsJabatan", con)
+        dsNamaJabatan.Clear()
+        daNamaJabatan.Fill(dsNamaJabatan, "NamaJabatan")
+
+        'Dim arr(0) As DataColumn
+        'arr(0) = dsNamaJabatan.Tables("NamaJabatan").Columns("Id_Jabatan")
+        'dsNamaJabatan.Tables("NamaJabatan").PrimaryKey = arr
+
+        cmbJabatan.DataSource = dsNamaJabatan.Tables("MsJabatan")
+        cmbJabatan.ValueMember = "Id_Jabatan"
+        cmbJabatan.DisplayMember = "Nama"
+Try
+            Dim daNamaJabatan As New OleDbDataAdapter("SELECT * from MsJabatan", con)
+            dsNamaJabatan.Clear()
+            daNamaJabatan.Fill(dsNamaJabatan, "NamaJabatan")
+
+            cmbJabatan.DataSource = dsNamaJabatan.Tables("NamaJabatan")
+            cmbJabatan.ValueMember = "Nama"
+            cmbJabatan.SelectedIndex = 0
+        Catch Exp As Exception
+            MessageBox.Show(Exp.Message)
+        End Try

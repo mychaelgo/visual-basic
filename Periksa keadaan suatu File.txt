@@ -1,0 +1,16 @@
+'Deskripsi: Memeriksa apakah suatu file ada atau tidak.
+'Pembuat  : Masino Sinaga (admin@masinosinaga.com)
+'Persiapan: 1. Buat 1 Project baru dengan 1 Form.
+'           2. Copy-kan coding berikut ke dalam editor form yang bertalian.
+'--------------------------------------------------------------------------
+
+'Dalam contoh ini, kita memeriksa apakah file "C:\autoexec.bat" ada.
+Private Sub Form_Load()
+  'Ganti "c:\autoexec.bat" dengan nama file (lengkap dengan path-nya) yang Ada
+  'inginkan, untuk memeriksa keberadaan file tersebut.
+  If Dir$("c:\autoexec.bat") <> "" Then 
+     MsgBox "File ada!", vbInformation, "Ada"
+  Else
+     MsgBox "File tidak ada!", vbCritical, "Tidak Ada"
+  End If
+End Sub

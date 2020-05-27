@@ -1,0 +1,53 @@
+'Deskripsi: Menjumlahkan beberapa data jam dan menit dan menampilkannya
+'           hasilnya dalam format "jam:menit"
+'Pembuat  : Masino Sinaga (admin@masinosinaga.com)
+'Tanggal  : Kamis, 29 Januari 2009
+'Persiapan: 1. Buat sebuah project standard exe dengan satu form
+'           2. Tambahkan satu CommandButton ke atas form
+'           3. Copy-paste code berikut ke editor form yang bertalian
+'----------------------------------------------------------------------
+
+Private Sub Command1_Click()
+  'Misalkan ada 3 record data dalam format: "dd-MM-yy hh:mm"
+  'yang diambil dari database dan ingin dijumlahkan hanya
+  'data jam dan menitnya saja, lalu tampilkan dalam format: "hh:mm"
+  MsgBox JumlahJamMenit("01-01-09 08:45", _
+                        "05-01-09 08:30", _
+                        "11-01-09 08:15")
+End Sub
+
+'Function berikut menggunakan parameter yang jumlahnya dinamis
+'Masih ingat dengan artikel yang pernah saya tulis mengenai
+'cara membuat function dengan parameter dinamis? ;-)
+Private Function JumlahJamMenit(ParamArray arrData()) As String
+  Dim intMenit As Integer
+  Dim intJam As Integer
+  Dim intJamTambahan As Integer
+  'Loop mulai dari elemen array indeks terbawah
+  'sampai ke elemen array indeks teratas...
+  'Dengan cara ini, Anda bisa menambahkan
+  'sebanyak berapa record-pun karena meskipun
+  'parameter di function ini cuma satu, tapi saat
+  'function digunakan, jumlah parameter bebas...
+  For i = LBound(arrData) To UBound(arrData)
+    'Ambil dan jumlahkan data menit
+    intMenit = intMenit + CInt(Right(arrData(i), 2))
+    'Ambil dan jumlahkan data jam
+    intJam = intJam + CInt(Mid(arrData(i), 10, 2))
+  Next i
+  'Jika jumlah menit yang telah diperoleh tadi hasilnya
+  'sama dengan atau lebih besar dari nilai 60,
+  'itu artinya ada data 1 jam yang harus ditambahkan
+  'ke nilai hasil penjumlahan jam sebelumnya
+  If intMenit >= 60 Then
+    intMenit = intMenit - 60
+    intJamTambahan = 1  '<-- jangan lupa ini!
+  Else 'jika jumlah menit lebih kecil dari 60
+    intJamTambahan = 0  '<-- set ke nol
+  End If
+  'Update jumlah jam
+  intJam = intJam + intJamTambahan
+  'Tampilkan dalam format "hh:mm"
+  JumlahJamMenit = Format(intJam, "00") & ":" & _
+                   Format(intMenit, "00")
+End Function

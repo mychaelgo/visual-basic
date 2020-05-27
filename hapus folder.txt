@@ -1,0 +1,5 @@
+Dim fso As FileSystemObject
+
+Set fso = New FileSystemObject
+fso.CreateFolder "C:\Test"
+fso.DeleteFolder "C:\Test", True

@@ -1,0 +1,27 @@
+On Error GoTo UpdateErr
+    Adodc1.Recordset.UpdateBatch adAffectAll
+  UpdateErr:
+    Select Case Err.Number
+         Case -2147467259
+              MsgBox "Data tersebut sudah ada." & vbCrLf & _
+                     "Ganti dengan yang lain!", vbCritical, _
+                     "RPH"
+             text1.SetFocus
+              Exit Sub
+         Case Else
+              MsgBox Err.Number & " - " & Err.Description
+    End Select
+
+
+On Error Resume Next
+  Adodc2.Recordset.UpdateBatch adAffectAll
+  Select Case Err.Number
+         Case -2147467259
+              MsgBox "NIM tersebut sudah ada." & vbCrLf & _
+                     "Ganti dengan yang lain!", vbInformation, _
+                     "NIM Dobel?"
+              Text1.SetFocus
+              Exit Sub
+         Case Else
+  End Select
+http://www.masinosinaga.com

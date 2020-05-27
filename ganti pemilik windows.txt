@@ -1,0 +1,51 @@
+'Deskripsi: Mengganti nama pemilik Windows yang terdaftar di komputer Anda
+'           beserta perusahaan/organisasinya.
+'Pembuat  : Masino Sinaga (admin@masinosinaga.com)
+'Diupload : Jumat, 10 Mei 2002
+'Persiapan: 1. Buat 1 Project baru dengan 1 Form, 1 Module, 2 Textbox, 
+'              dan 1 Commandbutton
+'           2. Copy-kan coding berikut ke dalam editor form & module ybt.
+'----------------------------------------------------------------------------
+
+'Masukkan nama pemilik Windows yang baru di Text1, masukkan nama perusahaan 
+'pemilik tersebut di Text2, lalu klik tombol Command1. Jika Anda mengosongkan
+'kedua texbox tsb lalu mengklik Command1, maka tidak ada perubahan yg terjadi.
+'Lihat perubahannya dari menu Start | Settings | Control Panel | System 
+'(tab General), atau klik kanan icon "My Computer" di desktop lalu pilih 
+'"Properties".
+
+'Coding ini di Module...
+Declare Function RegOpenKey Lib "advapi32.dll" Alias "RegOpenKeyA" _
+  (ByVal hKey As Long, ByVal lpSubKey As String, phkResult As Long) As Long
+Declare Function RegSetValueEx Lib "advapi32.dll" Alias "RegSetValueExA" _
+  (ByVal hKey As Long, ByVal lpValueName As String, ByVal Reserved As _
+  Long, ByVal dwType As Long, ByVal lpData As String, ByVal cbData As Long) As Long
+Declare Function RegFlushKey Lib "advapi32.dll" (ByVal hKey As Long) As Long
+Declare Function RegCloseKey Lib "advapi32.dll" (ByVal hKey As Long) As Long
+
+Public Const HKEY_LOCAL_MACHINE = &H80000002
+'--- Akhir coding di Module...
+
+'--- Coding ini di Form...
+Sub WriteRegistry(ByVal Group As Long, ByVal Section As String, ByVal Key As _
+    String, NewVal As String)
+  Dim lResult As Long, lKeyValue As Long
+  Dim InLen As Long
+  On Error Resume Next
+  lResult = RegOpenKey(Group, Section, lKeyValue)
+  InLen = Len(NewVal)
+  lResult = RegSetValueEx(lKeyValue, Key, 0&, 1&, NewVal, InLen)
+  lResult = RegFlushKey(lKeyValue)
+  lResult = RegCloseKey(lKeyValue)
+End Sub
+
+Private Sub Command1_Click()
+  WriteRegistry HKEY_LOCAL_MACHINE, _
+  "SOFTWARE\Microsoft\Windows\CurrentVersion", "RegisteredOwner", Text1
+  WriteRegistry HKEY_LOCAL_MACHINE, _
+  "SOFTWARE\Microsoft\Windows\CurrentVersion", "RegisteredOrganization", Text2
+  MsgBox "Registered Name = " & Text1.Text & "" & Chr(13) & _
+         "Registered Organization = " & Text2.Text & "", vbInformation, _
+         "Berhasil Diganti!"
+End Sub
+'--- Akhir coding di Form...

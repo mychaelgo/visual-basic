@@ -1,0 +1,43 @@
+Dim ca, cb, cc, cd, ce, cf As Integer
+Dim X As String
+ca = "+ A [" + Text3.Text + "] "
+cb = "x B [" + Text36.Text + "] "
+cc = "+ A [" + Text4.Text + "] "
+cd = "x B [" + Text41.Text + "] "
+ce = "+ A [" + Text5.Text + "] "
+cf = "x B [" + Text46.Text + "] "
+If Combo1.Text = "penjumlahan[+]" Then
+Text51.ToolTipText = "A [" + Text1.Text + "] + B [" + Text26.Text + "] = [" + Text51.Text + "]"
+Else
+If Combo1.Text = "pengurangan[-]" Then
+Text51.ToolTipText = "A [" + Text1.Text + "] - B [" + Text26.Text + "] = [" + Text51.Text + "]"
+Else
+If Combo1.Text = "pembagian[/]" Then
+Text51.ToolTipText = "A [" + Text1.Text + "] / B [" + Text26.Text + "] = [" + Text51.Text + "]"
+Else
+If Combo1.Text = "perkalian[*]" Then
+If Text3.Text = "" Then
+ca = X
+cb = X
+cc = X
+cd = X
+ce = X
+cf = X
+Else
+If Text4.Text = "" Then
+cc = X
+cd = X
+ce = X
+cf = X
+Else
+If Text5.Text = "" Then
+ce = X
+cf = X
+End If
+End If
+End If
+Text51.ToolTipText = "A [" + Text1.Text + "] x B [" + Text26.Text + "] + A [" + Text2.Text + "] x B [" + Text31.Text + "] " + ca + cb + cc + cd + ce + cf + " = [" + Text51.Text + "]"
+End If
+End If
+End If
+End If

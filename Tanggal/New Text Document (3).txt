@@ -1,0 +1,62 @@
+'Deskripsi: Contoh berikut akan menghitung biaya yang harus dibayar
+'           setiap durasi 10 detik.
+'Pembuat  : Masino Sinaga (admin@masinosinaga.com)
+'Diupload : Minggu, 18 Januari 2008
+'Persiapan: 1. Buat satu project standard exe dengan satu form
+'           2. Tambahkan 4 TextBox ke atas form, masing-masing
+'              bernama Text1, Text2, Text3, dan Text4.
+'           3. Tambahkan satu control Timer, dengan nama: Timer1
+'           4. Tambahkan 1 CommandButton, dengan nama: Command1
+'           5. Copy-paste code berikut ke editor form yang bertalian
+'-------------------------------------------------------------------
+
+Dim Awal As Date
+Dim Akhir As Date
+Dim Lama As Single
+Dim dtkAwal As Single
+Dim dtkAkhir As Single
+
+Private Sub Command1_Click()
+  'Jika tombol mula-mula adalah Start
+  If Command1.Caption = "Start" Then
+     Text4.Text = 0
+     dtkAwal = Time
+     Awal = Now
+     'Tampung waktu pertama kali dimulai
+     Text1.Text = Format(Awal, "hh:mm:ss")
+     Command1.Caption = "Stop"
+  'Jika tombol dengan tulisan Stop ditekan
+  ElseIf Command1.Caption = "Stop" Then
+     'Matikan Timer1
+     Timer1.Enabled = False
+     Akhir = Now
+     Lama = Akhir - Awal
+     Text3.Text = Format(Lama, "hh:mm:ss")
+     Command1.Caption = "Selesai"
+  ElseIf Command1.Caption = "Selesai" Then
+     Unload Me
+  End If
+End Sub
+
+Private Sub Form_Load()
+  Command1.Caption = "Start"
+End Sub
+
+Private Sub Timer1_Timer()
+  If Command1.Caption = "Stop" Then
+    dtkAkhir = Time  'dtkAkhir adalah waktu terkini
+    'Jika durasi terakhir mencapai 10 detik
+    'Apabila Anda ingin mengganti dengan durasi menit
+    'atau jam, maka Anda harus mengkonversi nilai menit
+    'atau jam tadi ke satuan detik!
+    If Second(dtkAkhir - dtkAwal) = 10 Then
+      dtkAwal = dtkAkhir  'Assignment dtkAkhir ke dtkAwal
+      'Update biaya dengan menambahkan sebesar 1100
+      Text4.Text = Format(Text4.Text + 1100, "#,#")
+    End If
+    'Update waktu terakhir dengan waktu saat ini
+    Text2.Text = Format(Now, "hh:mm:ss")
+    'Hitung kembali durasi waktu
+    Text3.Text = Format(Now - Awal, "hh:mm:ss")
+  End If
+End Sub

@@ -1,0 +1,21 @@
+'Deskripsi: Melanjutkan atau menghentikan suatu proses berdasarkan penekanan
+'           sembarang tombol di atas form.
+'Pembuat  : Masino Sinaga (admin@masinosinaga.com)
+'Persiapan: 1. Buat 1 Project baru dengan 1 Form.
+'           2. Tambahkan 1 control Timer dan 2 Label.
+'           3. Copy-kan coding berikut ke dalam editor form yang bertalian.
+'--------------------------------------------------------------------------
+
+Dim StatusLanjut As Boolean
+
+Private Sub Form_KeyPress(KeyAscii As Integer)
+  If StatusLanjut = False Then
+     Timer1.Enabled = True
+     StatusLanjut = True
+     Label1.Caption = "Press any key to stop..."
+  ElseIf StatusLanjut = True Then
+     Timer1.Enabled = False
+     StatusLanjut = False
+     Label1.Caption = "Press any key to continue.."
+  End If
+End Sub

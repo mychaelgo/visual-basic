@@ -1,0 +1,18 @@
+public sub isiCombo(cmb as combobox)
+rs = conn.execute("select * from data";)
+if not rs.EOF
+'kosongkan combo sebelum diisi
+cmb.clear
+do until rs.EOF
+cmb.additem rs.fields(0).value
+'next rs
+rs.movenext
+loop
+end if
+end sub
+
+saya tambah dikit yah...
+rs = conn.execute("select * from data";)
+field yang akan ditampilkan serta tabel from pake parameter juga bisa lebih dinamis kelihatane heheh :)
+
+sincerely yours

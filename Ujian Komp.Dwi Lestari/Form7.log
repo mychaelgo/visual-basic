@@ -1,0 +1,15 @@
+Line 72: Class MSFlexGridLib.MSFlexGrid of control MSFlexGrid1 was not a loaded control class.
+Line 290: Class MSMask.MaskEdBox of control MaskEdBox2 was not a loaded control class.
+Line 313: Class MSMask.MaskEdBox of control MaskEdBox1 was not a loaded control class.
+Line 78: The property name _ExtentX in MSFlexGrid1 is invalid.
+Line 79: The property name _ExtentY in MSFlexGrid1 is invalid.
+Line 80: The property name _Version in MSFlexGrid1 is invalid.
+Line 82: The property name BackColorBkg in MSFlexGrid1 is invalid.
+Line 296: The property name _ExtentX in MaskEdBox2 is invalid.
+Line 297: The property name _ExtentY in MaskEdBox2 is invalid.
+Line 298: The property name _Version in MaskEdBox2 is invalid.
+Line 311: The property name PromptChar in MaskEdBox2 is invalid.
+Line 319: The property name _ExtentX in MaskEdBox1 is invalid.
+Line 320: The property name _ExtentY in MaskEdBox1 is invalid.
+Line 321: The property name _Version in MaskEdBox1 is invalid.
+Line 334: The property name PromptChar in MaskEdBox1 is invalid.

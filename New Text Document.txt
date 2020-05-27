@@ -1,0 +1,48 @@
+Dim CONN As New ADODB.Connection
+Dim RS As New ADODB.Recordset
+
+Private Sub Command1_Click()
+Dim i As Integer
+Dim Daftar As ListItem
+Set RS = CONN.Execute(”Select*From Categories”)
+‘Membuat kolom
+ListView1.ListItems.Clear
+ListView1.ColumnHeaders.Add , , “ID Category”
+ListView1.ColumnHeaders.Add , , “Category Name”
+ListView1.ColumnHeaders.Add , , “Description”
+ListView1.ColumnHeaders.Add , , “Picture”
+ListView1.ColumnHeaders.Item(3).Width = “3000?
+
+i = 0
+For k = 1 To 8
+i = i + 1
+‘menampilkan field pada colom 1
+Set Daftar = ListView1.ListItems.Add(k, , RS!CategoryID, , Rnd(1) * ImageList1.ListImages.Count)
+‘menampilakan field lain ke kolom selanjutnya
+Daftar.SubItems(1) = RS!CategoryName
+Daftar.SubItems(2) = RS!Description
+Daftar.SubItems(3) = RS!Picture
+RS.MoveNext
+Next k
+End Sub
+
+Private Sub Command2_Click()
+ListView1.ListItems.Clear
+End Sub
+
+Private Sub Form_Load()
+‘Buka koneksi ke database Nwind.mdb
+Set CONN = New ADODB.Connection
+’sesuaikan dengan letak database anda
+CONN.Open “Provider=Microsoft.Jet.OLEDB.3.51;Persist Security Info=False;Data Source=D:\Program Files\Microsoft Visual Studio\VB98\NWIND.MDB”
+End Sub
+
+Private Sub Form_Unload(Cancel As Integer)
+‘Tutup koneksi ke database
+CONN.Close
+Set CONN = Nothing
+End Sub
+
+Selain menggunakan perintah For - Next, kita juga bisa menapilkan data dengan menggunakan perintah Do - Loop. Anda bisa mengembangkannya sesuai dengan kebutuhan anda. Semoga bermanfaat.
+
+Catatan: File Dabase yang saya gunakan ada pada D:\Program Files\Microsoft Visual Studio\VB98\NWIND.MDB. Sesuaikan dengan letak database di komputer anda

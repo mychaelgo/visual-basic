@@ -1,0 +1,310 @@
+body, body div, body p, body th,
+body td, body li, body dd
+{
+    font-size: x-small;         /* IE5 reads this          */
+    voice-family: "\"}\"";
+    voice-family: inherit;      /* IE5 can't get pass here */
+    font-size:   small;         /* IE6 reads this          */
+}
+
+/* CSS2 */
+/* NS6 will read this, but not IE6, nor IE5 */
+html>body, html>body div, html>body p, html>body th,
+html>body td, html>body li, html>body dd
+{
+    font-weight: 300;
+    font-size:   medium;
+}
+
+body, body div, body p, body th,
+body td, body li, body dd
+{
+    font-family: Arial, Verdana, sans-serif;
+    margin-left: 0; 
+    margin-top: 0;  
+}
+
+.lhl         { color: #006600; font-weight: bold }
+
+p                 { margin-top: .5em; margin-bottom: .5em }
+p.Box             { border: solid; border-width: +1px; padding: 0.5em; }
+
+p.GlossaryHeading { color: navy; font-size: 150%; font-weight: bold; }
+p.GlossaryIndex   { color: navy; font-weight: bold; }
+
+p.mailto     { font-size: 80%; margin: 1.25em 0em 1em 0em}
+p.copyright  { font-size: 80% }
+p.source     { font-size: 80%; font-style: italic }
+p.menus      { font-size: 80% }
+
+p.BItem      { position: relative; left: 60px; margin-right: 70px }
+
+/* SHARED BORDERS ************************************************************/
+
+.navlinkLeft   { color: black; font-size: 80%;  margin: 0 5 0  5 }
+.navlinkTop    { color: black; font-size: 100%; margin: 0 0 20 0 }
+.navlinkBottom { color: black; font-size: 80%;  margin: 0 5 0  5 }
+
+@media print {
+	div#borderTop    { display: none; }
+	div#borderLeft   { display: none; }
+	div#borderBottom { display: none; }
+}
+
+/* QUESTION & ANSWER DEFINTION ***********************************************/
+
+p:first-letter.ques {
+    float:left;
+    font: italic small-caps bold 145% serif;
+    color:#C60000; 
+}
+p:first-letter.answ{
+    float:left;
+    font: italic small-caps bold 160% serif;
+    color:#C60000; 
+}
+
+p:first-line.ques, p:first-line.answ {
+    font: italic small-caps
+}
+
+p.ques, p.ques-cont {
+    font-style:italic
+}
+    
+p.answ, p.answ-cont {
+}
+
+span.ques, span.answ { 
+    font italic small-caps bold 100% serif;
+    color:#C60000; 
+}
+
+div.ques {
+    margin: 2em 0em;
+    color: #191919;
+}
+               
+/* LINKS *********************************************************************/
+
+a { }
+a:link { }
+a:visited { }
+a:active { }
+a:hover { background-color: yellow; color: black; }
+
+/* HEADINGS ******************************************************************/
+
+h1, h2, h3, h4, h5, h6, p, ul { font-family: Arial, Verdana, sans-serif }
+h1 { font-size: 160%; font-weight: bold }
+h2 { font-size: 145%; }
+h3 { font-size: 135%; }
+h4 { font-size: 125%; }
+h5 { font-size: 120%; }
+h6 { font-size: 110%; }
+
+h1.reference { 
+	color: green; 
+	margin-bottom: 0;
+}
+
+h1.linkheader { 
+	font-size: 100%; 
+	margin: 0;
+}
+
+/* ENCARTA DEFINTION **********************************************************/
+
+.encarta {
+	color:#333333;
+	margin-bottom: 2em;
+}
+
+.encarta h1, .encarta h2, .encarta h3, .encarta h4, .encarta h5, .encarta h6 {
+	margin-bottom: .25em
+}
+
+.encarta blockquote, .encarta p, .encarta ul, .encarta ul li {
+	margin: 0 0 .5em 1em;
+	font-family: MS Reference Sans Serif;
+}
+
+.encarta ul { 
+	margin-left:3em!important
+}
+    
+/* MORE INFORMATION SECTION ***************************************************/
+
+h1.moreinfo, h2.moreinfo, h3.moreinfo {
+	color: blue;
+	font-size: 125%;
+	margin-bottom: 0;
+}
+
+p.moreinfo {
+
+}
+
+ul.moreinfo {
+	margin-top: 0;
+}
+
+ul.moreinfo li {
+	margin-bottom: .75em;
+}
+
+hr.moreinfo {
+	height: 1px; color: blue
+}
+
+/* -------------------------------------------------------------------------- */
+
+pre { white-space: pre; font-family: monospace; }
+
+tt {
+    white-space: pre; 
+    font-family: monospace;
+}
+
+/* -------------------------------------------------------------------------- */
+/* TABLE SECTION ------------------------------------------------------------ */
+
+/*
+	Do not define 'td' when using FrontPage shared borders.
+	FrontPage wraps page content in a table for page layout, and
+	other element formatting is overwritten.
+	
+	td {
+		color: black;
+		font-family: arial;
+		font-size: 6pt
+	}
+
+*/
+
+th {
+    background: #CCCCFF;
+}
+
+tr.even {
+    BACKGROUND-COLOR: white
+}
+
+tr.odd {
+    BACKGROUND-COLOR: #f6f5ed
+}
+
+td.center {
+    text-align: center;
+}
+
+p.tablenote  { font-size: smaller }
+p.table_note { font-size: smaller }
+
+
+/* -------------------------------------------------------------------------- */
+
+dt {
+    font-weight: bold;
+    margin-top: +1em;
+}
+
+dd {
+    margin-bottom: +1em;
+}
+
+/* -------------------------------------------------------------------------- */
+/* UPDATE SECTION */
+
+p.updateheader{ font-size: 110%; font-weight: bold; margin-top: 2em; margin-bottom: 0em }
+
+ul.updated {
+	list-style-position:inside;
+	margin-bottom: 1em;
+}
+
+li.new {
+    list-style-image:  url('../images/new.gif');
+    margin-bottom: 1em;
+}
+
+li.updated {
+    list-style-image: url('../images/updated.gif');
+    margin-bottom: 1em;
+}
+
+/* -------------------------------------------------------------------------- */
+
+li { margin-bottom: .5em }
+
+li.redtriangle { 
+    color: #800080; 
+    font-family: arial, helvetica, sans-serif; 
+    list-style-type: square; 
+    text-decoration: none; 
+    list-style-image: url('../images/li_red_triangle.gif')
+}
+
+li.redheart  { 
+    color: #333333; 
+    font-family: arial, helvetica, sans-serif; 
+    list-style-type: square; 
+    text-decoration: none; 
+    list-style-image: url('../images/li_red_heart.gif');
+}
+
+/* PERSONAL COMMENT DEFINTION **********************************************************/
+
+div.commentSection { color: #000080; margin: 1em; border: solid 1px #000080; background: #CCCCFF; padding: 1em; width: 95% }
+	/*	width: 100% is required for proper wrapping */
+	
+p.commentHeader { font-weight: bold;  margin-bottom: .5em; margin-left: 0em; margin-right: 0em; margin-top: 0em }
+p.commentBody { margin-left: 1em; margin-bottom: 0.5em }
+
+
+/* -------------------------------------------------------------------------- */
+
+span.leadin { font-size: 105%; color: #C60000; font-variant: small-caps; font-weight:bold }
+
+span.purple_heading { font-family: Times New Roman; font-size: x-large; color: rgb(102,0,102); font-weight: 900; letter-spacing: -2px }               
+span.dropcap { font-size: 120%; font-weight: 900 }
+span.BChar { position: absolute; left: -60px; top: auto}
+span.navbar_left { font-size: 80%; font-style: italic; font-weight: bold; position: relative;  width: 100px }
+span.highlight { background: yellow; }
+span.ChangedCode { background: #D3D3D3; font-weight: bold; }
+span.keyword { COLOR: navy; FONT-FAMILY: Courier }
+span.default { COLOR: black; FONT-FAMILY: Courier }
+span.MenuItem { font-weight: bold; }
+span.DialogName { font-weight: bold; }
+span.DialogItem { font-weight: bold; }
+span.software { font-style: italic; }
+span.bullet  { font-family: Symbol }
+span.label   { float: left; background-color: #CCCCCC; margin: 5px; padding: 15px }
+
+p.submit { font-size: smaller }
+
+.question { font-style: italic }
+.answer   { font-style: normal }
+
+div.footnote { position: relative; z-index: 1; float: right; font-family: Arial, Helvetica, sans-serif; font-size:80% }
+
+div#timestamp { 
+	position: relative; 
+	top: 0;
+	z-index: 999; 
+	float: right; 
+	text-align: right; 
+	font-family: monospace; 
+	font-size: 60%;
+	clear: all;
+}
+
+.shout { text-transform: uppercase }
+.shout { font-variant: small-caps }
+
+sup { font-size: 80% }
+
+p.quote { margin-top: 2em }
+p.author { font-style: italic; margin-left: 10px; margin-bottom: 2em }
+
+img#takePride { z-index: 998; clear: all; border: solid 1px #cccccc }

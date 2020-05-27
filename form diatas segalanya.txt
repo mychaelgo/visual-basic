@@ -1,0 +1,35 @@
+'Deskripsi: Membuat suatu form bisa tampil paling atas dari setiap aplikasi
+'           yang sedang dijalankan.
+'Pembuat  : Masino Sinaga (admin@masinosinaga.com)
+'Persiapan: 1. Buat 1 Project baru dengan 1 Form dan 1 Module, dan 2 Commandbutton.
+'           2. Copy-kan coding berikut ke dalam editor Module/Form ybt.
+'----------------------------------------------------------------------------------
+
+'Tombol pertama untuk membuat tampil paling atas dari segalanya.
+'Tombol kedua untuk membuat form kembali seperti posisi sebelumnya.
+
+'--- Coding ini di Module...
+Declare Function SetWindowPos Lib "user32" (ByVal h As Long, _
+                                            ByVal hb As Long, _
+                                            ByVal x As Long, _
+                                            ByVal Y As Long, _
+                                            ByVal cx As Long, _
+                                            ByVal cy As Long, _
+                                            ByVal F As Long) As Long
+
+Global Const SWP_NOMOVE = 2
+Global Const SWP_NOSIZE = 1
+Global Const flags = SWP_NOMOVE Or SWP_NOSIZE
+Global Const HWND_TOPMOST = -1
+Global Const HWND_NOTOPMOST = -2
+'--- Batas coding di Module...
+
+'--- Coding ini di Form...
+Private Sub Command1_Click()
+  res = SetWindowPos(Form1.hwnd, HWND_TOPMOST, 0, 0, 0, 0, flags)
+End Sub
+
+Private Sub Command2_Click()
+  res = SetWindowPos(Form1.hwnd, HWND_NOTOPMOST, 0, 0, 0, 0, flags)
+End Sub
+'--- Batas coding di Form...

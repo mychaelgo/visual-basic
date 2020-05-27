@@ -1,0 +1,37 @@
+'Deskripsi: Mengubah caption form lain dari suatu form dengan menggunakan
+'           statement Set ... = ...
+'Pembuat  : Masino Sinaga (admin@masinosinaga.com)
+'Diupload : Rabu, 15 Mei 2002
+'Persiapan: 1. Buat 1 Project baru dengan 2 Form. 
+'           2. Beri nama masing-masing dengan frmForm1 dan frmForm2.
+'           3. Pada frmForm1 buat 1 Commandbutton, beri nama cmdShowForm.
+'           4. Pada frmForm2 buat 1 TextBox dan 1 Commandbutton. Beri nama
+'              masing-masing dengan cmdSetCaption dan txtNewCaption
+'           5. Copy-kan coding berikut ke dalam editor form yang bertalian.
+'----------------------------------------------------------------------------
+
+'--- Coding ini di frmForm1
+Private Sub cmdShowForm_Click()
+    Load frmForm2
+    frmForm2.Show
+    frmForm2.SetReference Me
+End Sub
+
+Private Sub Form_Load()
+    Load frmForm2
+End Sub
+'--- Akhir coding di frmForm1
+
+'--- Coding ini di frmForm2
+Dim ref As Object
+
+Public Sub SetReference(objRef As Object)
+    Set ref = objRef
+End Sub
+
+Private Sub cmdSetCaption_Click()
+    Dim cap As String
+    cap = txtNewCaption.Text
+    ref.Caption = cap
+End Sub
+'--- Akhir coding di frmForm2

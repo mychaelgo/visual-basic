@@ -1,0 +1,44 @@
+'Deskripsi: Menampilkan informasi suatu file atau folder (direktori) mengenai
+'           tanggal dibuat, ukuran, nama, lokasi, dan tipe.
+'Pembuat  : Masino Sinaga (admin@masinosinaga.com)
+'Diupload : Jumat, 10 Mei 2002
+'Persiapan: 1. Buat 1 Project baru dengan 1 Form dan 1 Commandbutton.
+'           2. Copy-kan coding berikut ke dalam editor form yang bertalian.
+'----------------------------------------------------------------------------
+Private Sub Command1_Click()
+  'Ganti "C:\My Documents\WP112001\") di bawah
+  'dengan nama folder/direktori atau file yang
+  'Anda inginkan untuk ditampilkan informasinya...
+  Call ShowFolderInfo("C:\My Documents\WP112001\")
+End Sub
+
+Sub ShowFolderInfo(foldername)
+On Error GoTo Pesan
+   Dim fs, f, s, k, l, m, n, o
+   Set fs = CreateObject("Scripting.FileSystemObject")
+   Set f = fs.GetFolder(foldername) 'Direktori
+   'Untuk info file, ganti GetFolder dengan GetFile...
+   'Set f = fs.GetFile(foldername)  'File
+   s = f.DateCreated  'Tanggal dibuat
+   k = f.Size         'Ukuran isi folder/file
+   l = f.Name         'Nama folder/file ybt
+   m = f.Path         'Nama path lengkap (lokasi)
+   n = f.Type         'Apakah folder atau file...
+   'Tampilkan informasi folder/file...
+   MsgBox "Tanggal & Jam dibuat: " & Format(s, "dd/mm/yyyy hh:mm:ss") & "" & vbCrLf & _
+          "Ukuran = " & Format(k, "#,#") & " byte(s)" & vbCrLf & _
+          "Nama folder/file = " & l & "" & vbCrLf & _
+          "Path lengkap = " & m & "" & vbCrLf & _
+          "Type = " & n & "", vbInformation, _
+          "Informasi File/Folder: " & foldername
+   Exit Sub
+Pesan:   'Kemungkinan jika terjadi error...
+  Select Case Err.Number
+         Case 76
+              MsgBox "Direktori atau file tidak ada!", _
+                     vbCritical, "Error"
+         Case Else
+              MsgBox Err.Number & " - " _
+                     & Err.Description
+  End Select
+End Sub

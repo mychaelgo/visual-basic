@@ -1,0 +1,82 @@
+1*2
+1*3
+1*4
+1*5
+2*1
+2*2
+2*3
+2*4
+2*5
+3*1
+3*2
+3*3
+3*4
+3*5
+4*1
+4*2
+4*3
+4*4
+4*5
+5*1
+5*2
+5*3
+5*4
+5*5
+Dim a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y As Integer
+a = Val(Text26.Text)
+b = Val(Text27.Text)
+c = Val(Text28.Text)
+d = Val(Text29.Text)
+e = Val(Text30.Text)
+f = Val(Text31.Text)
+g = Val(Text32.Text)
+h = Val(Text33.Text)
+i = Val(Text34.Text)
+j = Val(Text35.Text)
+k = Val(Text36.Text)
+l = Val(Text37.Text)
+m = Val(Text38.Text)
+n = Val(Text39.Text)
+o = Val(Text40.Text)
+p = Val(Text41.Text)
+q = Val(Text42.Text)
+r = Val(Text43.Text)
+s = Val(Text44.Text)
+t = Val(Text45.Text)
+u = Val(Text46.Text)
+v = Val(Text47.Text)
+w = Val(Text48.Text)
+x = Val(Text49.Text)
+y = Val(Text50.Text)
+ca = Val(Text51.Text)
+cb = Val(Text52.Text)
+cc = Val(Text53.Text)
+cd = Val(Text54.Text)
+ce = Val(Text55.Text)
+cf = Val(Text56.Text)
+cg = Val(Text57.Text)
+ch = Val(Text58.Text)
+ci = Val(Text59.Text)
+cj = Val(Text60.Text)
+ck = Val(Text61.Text)
+cl = Val(Text62.Text)
+cm = Val(Text63.Text)
+cn = Val(Text64.Text)
+co = Val(Text65.Text)
+cp = Val(Text66.Text)
+cq = Val(Text67.Text)
+cr = Val(Text68.Text)
+cs = Val(Text69.Text)
+ct = Val(Text70.Text)
+cu = Val(Text71.Text)
+cv = Val(Text72.Text)
+cw = Val(Text73.Text)
+cx = Val(Text74.Text)
+cy = Val(Text75.Text)
+Text51.ToolTipText = "A [" + Text1.Text + "] x B [" + Text26.Text + "] + A [" + Text2.Text + "] x B [" + Text31.Text + "] + A [" + Text3.Text + "] x B [" + Text36.Text + "] + A [" + Text4.Text + "] x B [" + Text41.Text + "] + A [" + Text5.Text + "] x B [" + Text46.Text + "] = [" + Text51.Text + "]"
+ca = "+ A [" + Text3.Text + "] "
+cb = "x B [" + Text36.Text + "] "
+cc = "+ A [" + Text4.Text + "] "
+cd = "x B [" + Text41.Text + "] "
+ce = "+ A [" + Text5.Text + "] "
+cf = "x B [" + Text46.Text + "] "

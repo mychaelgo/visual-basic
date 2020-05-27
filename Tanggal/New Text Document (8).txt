@@ -1,0 +1,32 @@
+'Deskripsi: Menghitung selisih dua buah tanggal yang diketahui berdasarkan
+'           (selang waktu) tertentu, apakah hari (d), bulan (m),
+'           atau tahun (yyyy), menggunakan fungsi DateDiff.
+'Pembuat  : Masino Sinaga (admin@masinosinaga.com)
+'Diupload : Minggu, 12 Mei 2002
+'Persiapan: 1. Buat 1 Project baru dengan 1 Form dan 1 Commandbutton
+'           2. Copy-kan coding berikut ke dalam editor form yang bertalian
+'----------------------------------------------------------------------------
+
+Private Sub Command1_Click()
+Dim hari As Integer, bulan As Integer, tahun As Integer
+    hari = DateTime.DateDiff("d", _
+           CDate("22/01/1973"), _
+           CDate("22/01/2002")) '--> Menghasilkan 10592
+    
+    bulan = DateTime.DateDiff("m", _
+           CDate("22/01/1973"), _
+           CDate("22/01/2002")) '--> Menghasilkan 348
+    
+    tahun = DateTime.DateDiff("yyyy", _
+           CDate("22/01/1973"), _
+           CDate("22/01/2002")) '--> Menghasilkan 29
+    
+    MsgBox "Selisih antara tanggal 22/01/1973" & vbCrLf & _
+           "dengan tanggal 22/01/2002 " & vbCrLf & _
+           "menghasilkan sebagai berikut: " & vbCrLf & _
+           "" & vbCrLf & _
+           " " & Format(hari, "#,#") & " hari, ATAU" & vbCrLf & _
+           " " & Format(bulan, "#,#") & " bulan, ATAU" & vbCrLf & _
+           " " & Format(tahun, "#,#") & " tahun", _
+           vbInformation, "DateDiff"
+End Sub

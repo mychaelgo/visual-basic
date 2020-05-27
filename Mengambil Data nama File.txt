@@ -1,0 +1,22 @@
+'Deskripsi: Mengambil data nama file dari nama lengkap file.
+'Pembuat  : Masino Sinaga (admin@masinosinaga.com)
+'Persiapan: 1. Buat 1 Project baru dengan 1 Form.
+'           2. Copy-kan coding berikut ke dalam editor Form ybt.
+'------------------------------------------------------------------------------------
+
+Function StripPath(T$) As String
+Dim x%, ct%
+  StripPath$ = T$
+  x% = InStr(T$, "\")
+  Do While x%
+     ct% = x%
+     x% = InStr(ct% + 1, T$, "\")
+  Loop
+  If ct% > 0 Then StripPath$ = Mid$(T$, ct% + 1)
+End Function
+
+Private Sub Form_Load()
+  'Ganti dengan nama lengkap file (beserta path-nya) yang ingin Anda ambil
+  'nama file-nya.
+  MsgBox StripPath("c:\mydir\myfile.exe") 'Contoh ini menghasilkan: 'myfile.exe'
+End Sub

@@ -1,0 +1,27 @@
+'Deskripsi: Membuka windows explorer dengan direktori tertentu.
+'Pembuat  : Masino Sinaga (admin@masinosinaga.com)
+'Persiapan: 1. Buat 1 Project baru dengan 1 Form, 1 Module, dan 1 Commandbutton.
+'           2. Copy-kan coding berikut ke Module dan Form yang bertalian.
+'-------------------------------------------------------------------------------
+
+'--- Coding ini di Module...
+Declare Function ShellExecute Lib "shell32.dll" _
+    Alias "ShellExecuteA" (ByVal hwnd As Long, ByVal _
+    lpOperation As String, ByVal lpFile As String, ByVal _
+    lpParameters As String, ByVal lpDirectory As String, _
+    ByVal nShowCmd As Long) As Long
+
+Public Const SW_SHOWNORMAL = 1
+'--- Batas coding di Module...
+
+'--- Coding ini di Form...
+Public Sub OpenExplorer(Optional InitialDirectory As String)
+      ShellExecute 0, "Explore", InitialDirectory, _
+        vbNullString, vbNullString, SW_SHOWNORMAL
+End Sub
+
+Private Sub Command1_Click()
+   'Tentukan nama direktori yang akan Anda buka dengan windows explorer
+   OpenExplorer ("C:\Program Files\")
+End Sub
+'--- Batas coding di Form...

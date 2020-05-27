@@ -1,0 +1,25 @@
+'Deskripsi: Memindahkan file dari suatu folder ke folder lain.
+'Pembuat  : Masino Sinaga (admin@masinosinaga.com)
+'Persiapan: 1. Buat 1 Project dengan 1 Form, 1 Module, dan 1 Commandbutton.
+'           2. Copy-kan coding berikut ke dalam editor form Anda.
+'--------------------------------------------------------------------------
+
+'--- Ini coding di Module Anda...
+Declare Function MoveFile Lib "kernel32" Alias "MoveFileA" (ByVal _
+lpExistingFileName As String, ByVal lpNewFileName As String) As Long
+'--- Batas coding di Module...
+
+'--- Ini coding di Form Anda...
+Private Sub Command1_Click()
+'Contoh ini memindahkan file 'c:\MyFile.Zip' ke direktori 'c:\MyDir'.
+  A = MoveFile("c:\MyFile.Zip", "c:\MyDir\MyFile.Zip")
+  If A Then
+     MsgBox "File berhasil dipindahkan!", vbInformation, "Sukses Pindah File"
+  Else
+     MsgBox "Error. File belum dipindahkan!" & Chr(13) & _
+            "Kemungkinan file asal tidak ada" & Chr(13) & _
+            "atau file sudah ada di dalam " & Chr(13) & _
+            "direktori tujuan!", vbCritical, "Gagal Pindah File"
+  End If
+End Sub
+'--- Batas coding di Form...

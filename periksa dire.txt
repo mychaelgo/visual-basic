@@ -1,0 +1,15 @@
+'Deskripsi: Memeriksa apakah suatu direktori apakah ada atau tidak.
+'Pembuat  : Masino Sinaga (admin@masinosinaga.com)
+'Persiapan: 1. Buat 1 Project baru dengan 1 Form.
+'           2. Copy-kan coding berikut ke dalam editor form yang bertalian.
+'--------------------------------------------------------------------------
+
+'Dalam contoh ini, kita memeriksa apakah direktori "C:\Windows" ada.
+Private Sub Form_Load()
+Const ATTR_DIRECTORY = 16
+  If Dir$("c:\windows", ATTR_DIRECTORY) <> "" Then 
+     MsgBox "Direktori ada!", vbInformation, "Ada"
+  Else
+     MsgBox "Direktori tidak ada!", vbCritical, "Tidak Ada"
+  End If
+End Sub

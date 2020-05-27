@@ -1,0 +1,51 @@
+-- prepare msgbox function
+msgbox = function(s,...)  
+	if type(s)== 'string' then  
+	   msg = s:format(...) 
+	elseif type(s)=='number' then  
+	   msg = s 
+	else  
+	   msg = 'NULL'
+	end 
+	luacom.MsgBox(msg,64,_VERSION)
+end
+
+hi='Hello world!'
+msgbox (hi)
+
+-- function closures are powerful
+
+-- traditional fixed-point operator from functional programming
+Y = function (g)
+      local a = function (f) return f(f) end
+      return a(function (f)
+                 return g(function (x)
+                             local c=f(f)
+                             return c(x)
+                           end)
+               end)
+end
+
+
+-- factorial without recursion
+F = function (f)
+      return function (n)
+               if n == 0 then return 1
+               else return n*f(n-1) end
+             end
+    end
+
+factorial = Y(F)   -- factorial is the fixed point of F
+
+-- now test it
+function test(x)
+	msgbox('%s %s %s %s',x,"! = ",factorial(x),"\n")
+end
+
+for n=0,7 do
+	test(n)
+end
+
+msgbox('%s %s','Your computer name is ',luacom.GetComputerName())
+
+X=factorial(8)

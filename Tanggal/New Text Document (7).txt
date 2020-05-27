@@ -1,0 +1,30 @@
+'Deskripsi: Menghitung selisih dua buah tanggal yang diketahui 
+'           lalu menampilkan hasilnya dalam bentuk selisih tahun
+'           dan selisih bulannya.
+'Pembuat  : Masino Sinaga (admin@masinosinaga.com)
+'Diupload : Minggu, 11 Agustus 2002
+'Persiapan: 1. Buat 1 Project baru dengan 1 Form dan 1 Commandbutton
+'           2. Copy-kan coding berikut ke dalam editor form yang bertalian
+'----------------------------------------------------------------------------
+
+Private Sub Command1_Click()  
+  MsgBox SelisihTanggal(CDate("01/05/1999"), CDate("15/09/2002"))
+  'Contoh ini menghasilkan: 3.4 --> artinya: 3 tahun 4 bulan.
+End Sub
+
+Public Function SelisihTanggal(ByVal TanggalAwal As Date, _
+                ByVal TanggalAkhir As Date) As String
+'Untuk menghitung selisih tahun dan bulan dari
+'dua buah tanggal
+Dim Tahun As Integer, Sisa As Integer
+Dim SelisihBulan As Integer
+On Error GoTo Pesan
+  SelisihBulan = DateDiff("m", TanggalAwal, TanggalAkhir)
+  Tahun = SelisihBulan \ 12
+  Sisa = SelisihBulan Mod 12
+  'SelisihTanggal = Tahun & " Tahun " & Sisa & " Bulan."
+  SelisihTanggal = Tahun & "." & Sisa
+  Exit Function
+Pesan:
+  MsgBox "Tipe tanggal salah!", vbCritical, "Error Tanggal"
+End Function

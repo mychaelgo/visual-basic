@@ -1,0 +1,24 @@
+'Deskripsi: Hanya tipe data number/numeric yang boleh dientri ke dalam textbox.
+'Pembuat  : Masino Sinaga (admin@masinosinaga.com)
+'Persiapan: 1. Buat 1 Project baru dengan 1 Form, 2 TextBox.
+'           2. Copy-kan coding berikut ke dalam editor yang bertalian.
+'----------------------------------------------------------------------
+
+'Hanya karakter 0 sampai dengan 9 saja.
+Private Sub Text1_KeyPress(KeyAscii As Integer)
+   If KeyAscii < 47 Or KeyAscii > 57 Then KeyAscii = 0
+End Sub
+
+'Cara di atas hanya menerima karakter 0 sampai dengan 9 saja.
+'Agar tombol lainnya seperti Delete, BackSpace, dan SpaceBar
+'juga bisa diterima, Anda bisa menggunakan tips di bawah ini:
+Private Sub Text2_KeyPress(KeyAscii As Integer)
+  If Not (KeyAscii >= Asc("0") & Chr(13) _
+     And KeyAscii <= Asc("9") & Chr(13) _
+     Or KeyAscii = vbKeyBack _
+     Or KeyAscii = vbKeyDelete _
+     Or KeyAscii = vbKeySpace) Then
+        Beep
+        KeyAscii = 0
+   End If
+End Sub

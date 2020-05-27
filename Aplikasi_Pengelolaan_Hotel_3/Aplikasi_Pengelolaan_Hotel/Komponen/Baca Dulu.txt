@@ -1,0 +1,9 @@
+Untuk instalasi di win xp cukup menjalankan file "instal for win xp.bat"
+
+bila tidak berhasil dengan cara diatas gunakan cara dibawah ini :
+
+----> copy semua folder ini ke "C:\"
+----> Atau Copy semua file ke "c:\windows\system32\"
+
+----> Jalankan "Reg.bat" usahakan file ini berada pada satu folder dengan file "*Ocx"
+      yang sudah dicopy tadi
